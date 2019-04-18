@@ -18,11 +18,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-
+    <!--配置shiro环境启动时监听器-->
+    <!--默认情况下，此侦听器自动知道WEB-INF/shiro.ini为Shiro配置查找我们的文件。-->
     <listener>
         <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
     </listener>
-
+    <!--此过滤器有望过滤所有请求到Web应用程序，因为Shiro要在允许请求到达应用程序之前执行必要的身份和访问控制操作。-->
     <filter>
         <filter-name>ShiroFilter</filter-name>
         <filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>
